@@ -1,7 +1,9 @@
 import styled from "styled-components";
 import { Link } from "react-router-dom";
+import axios from "axios";
 import React, { useState } from "react";
 import logo from "./kream-logo.PNG"
+
 
 const StyledHeaderTop = styled.header`
   background-color: #222831;
@@ -52,9 +54,17 @@ const Header = () => {
 
   // 검색창
   const [search, setSearch] = useState("");
+  
   const onChange = (e) => {
     setSearch(e.target.value)
   }  
+  const onClick = () => {
+    axios.get()
+    .then(response => {
+      setSearch(response.data);
+    })
+  }
+
 
   return (
     <>
@@ -84,8 +94,8 @@ const Header = () => {
         <div className="category">
           <Link to = {"/Board"} className="board">커뮤니티</Link>
         </div>
-        <div>
-          <span className="search">이만큼검색창자리임</span>
+        <div className="searchBar">
+          <input type="text" className="search" value={search} placeholder="검색어 입력" onChange={onChange}/>
         </div>
       </StyledHeader>
     </>
