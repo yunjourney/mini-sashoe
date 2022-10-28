@@ -1,6 +1,7 @@
 import styled from "styled-components";
 import { Link } from "react-router-dom";
 import { useState } from "react";
+import logo from "./kream-logo.PNG"
 
 const StyledHeaderTop = styled.header`
   background-color: #222831;
@@ -27,10 +28,12 @@ const StyledHeader = styled.header`
   align-items: center;
   border-bottom: 1px solid #eeeeee;
   .nav-logo .nav-logo-link {
+    /* width: 150px;
+    height: 30px;
     text-decoration: none;
     font-size: 30px;
     color: #00ADB5;
-    font-weight: bold;
+    font-weight: bold; */
   }
   .category {
     .itemlist, .board {
@@ -62,7 +65,8 @@ const Header = () => {
       </StyledHeaderTop>
       <StyledHeader>
         <div className="nav-logo">
-          <Link to = {"/"} className="nav-logo-link">SASHOE</Link>
+          <Link to = {"/"} className="nav-logo-link">
+          <img src={logo} alt="logo"/></Link>
         </div>
         <div className="category">
           <Link to = {"/ItemList"} className="itemlist">SNEAKERS</Link>
