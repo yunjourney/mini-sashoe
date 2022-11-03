@@ -1,9 +1,9 @@
-// djdjjdjd
+import React from "react";
+
 const Modify = () => {
 
     return(
         <>
-        <h1>마이페이지</h1>
         </>
     )
 }

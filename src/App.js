@@ -1,5 +1,4 @@
 import './App.css';
-import './Style.css';
 import {BrowserRouter as Router, Routes, Route} from "react-router-dom";
 import Home from './home/Home';
 import Cs from './cs/Cs';
@@ -13,8 +12,14 @@ import Agree from './signup/Agree';
 import SignCom from './signup/SignCom';
 import SignUp from './signup/SignUp';
 import SiteInfo from './siteinfo/SiteInfo';
+import Boards from './board/boards';
 import Header from './components/Header';
-import Board from './board/Board';
+import Footer from './components/Footer';
+import Board from './board/board';
+import WriteBoard from './board/writeBoard';
+import Privacy from './privacy/Privacy';
+import Like from './mypage/Like';
+import Mypage from './mypage/Mypage';
 
 function App() {
   return (
@@ -34,10 +39,17 @@ function App() {
           <Route path='/SignCom' element={<SignCom />} />
           <Route path='/SignUp' element={<SignUp />} />
           <Route path='/SiteInfo' element={<SiteInfo />} />
-          <Route path='/Board' element={<Board/>} />
-        </Routes>
+          <Route path='/Boards' element={<Boards />} />
+          <Route path='/Board' element={<Board />} />
+          <Route path='/WriteBoard' element={<WriteBoard />} />
+          <Route path='/Privacy' element={<Privacy/>} />
+          <Route path='/Like' element={<Like />} />
+          <Route path='/Mypage' element={<Mypage />} />
+      </Routes>
+      <Footer/>
       </div>
     </Router>
+    
    
   );
 }
