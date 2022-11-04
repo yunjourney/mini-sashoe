@@ -69,9 +69,9 @@ const brandCategories = [
 
 const ItemList = (props) => {
   const [category, setCategory] = useState("ALL");
+  const [sortCondition, setSortCondition] = useState("NEW_DATE");
   const [itemInfo, setItemInfo] = useState('');
-  const [sortCondition, setSortCondition] = useState("");
-
+  
   useEffect(() => {
     console.log("상품 목록 보기 컴포넌트 useEffect Call !!!!!!!");
     const itemData = async () => {
@@ -83,7 +83,7 @@ const ItemList = (props) => {
       }
     };
     itemData();
-  }, [category]);
+  }, [category, sortCondition]);
 
   // 브랜드명 클릭 시 해당 브랜드 상품만 보여줌
   const onClickBrand = (val) => {
@@ -108,6 +108,7 @@ const ItemList = (props) => {
             <ItemDescBlock>
               <p className="brand-name" onClick={()=>onClickBrand(item.BRAND)}>{item.BRAND}</p>
               <p className="item-name">{item.PRO_NAME}</p>
+              <p className="laun-date">{item.LAUN_DATE}</p>
               <p className="price">발매가 : {item.PRICE}원</p>
               <p className="like">♡ 관심상품 </p>
             </ItemDescBlock>

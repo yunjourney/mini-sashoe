@@ -13,46 +13,28 @@ const SortStyleBlock = styled.div`
   }
 `;
 
-const SortItem = ({sort, setSort}) => {
+const SortItem = ({sort, setSortCondition}) => {
   // const getSortList = window.localStorage.getItem("sortByNewDate");
    //const [sortCondition, setSortCondition] = useState();
   
-  // useEffect(() => {
-  //     const sortItemData = async () => {
-  //       try {
-  //           const response = await MiniApi.itemInfo(sortCondition); 
-  //           setSortData(response.data);
-  //           console.log(response.data);
-  //       } catch (e) {
-  //           console.log(e);
-  //       }
-  //     };
-  //     sortItemData();
-  // }, []);
-
   const onChangeNewDate = () => {
-    setSort("NEW_DATE");
+    setSortCondition("NEW_DATE");
   }
 
   const onChangeLowPrice = () => {
-    setSort("LOW_PRICE");
+    setSortCondition("LOW_PRICE");
   }
   
   const onChangeHighPrice = () => {
-    setSort("HIGH_PRICE");
+    setSortCondition("HIGH_PRICE");
   }
-
-  // const onChangeLike = (sortData) => {
-  //   sortData.sort((a, b) => a - b);
-  //   setSortData("sortByLike");
-  // }
 
   return (
     <SortStyleBlock>
       <select>
-        <option value={sort} onChange={onChangeNewDate}>최신 발매순</option>
+        <option value={sort} onChange={()=>onChangeNewDate}>최신 발매순</option>
         <option value={sort} onChange={onChangeLowPrice}>낮은 가격순</option>
-        <option value={sort} onChange={onChangeHighPrice}>높은 가격순</option>
+        <option value={sort} onChange={()=>onChangeHighPrice}>높은 가격순</option>
         {/* <option value="sortByLike" onChange={onChangeLike}>관심 많은순</option> */}
       </select>
     </SortStyleBlock>

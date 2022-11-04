@@ -8,7 +8,7 @@ import logo from "./kream-logo.PNG"
 const StyledHeaderTop = styled.header`
   background-color: #222831;
   width: 100%;
-  padding: 10px 12px 15px 12px;
+  padding: 10px 0px 15px 0px;
   display: flex;
   justify-content: right;
   .nav-top {
@@ -25,7 +25,7 @@ const StyledHeaderTop = styled.header`
 const StyledHeader = styled.header`
   background-color: #ffffff;
   width: 100%;
-  padding: 40px;
+  /* padding: 40px; */
   margin-bottom: 30px;
   display: flex;
   align-items: center;
@@ -38,17 +38,23 @@ const HeaderLogo = styled.div`
 `;
 
 const HeaderMenu = styled.div`
-  text-decoration: none;
   font-size: 20px;
   color: #222831;
-  margin: 0 auto;
+  align-items: center;
+
+  .category, .searchBar {
+  float: left;
+  margin: 10px;
+  }
+  .itemlist, .board {
+    text-decoration: none;
+  }
   .search {
     box-sizing: border-box;
     border: 1px solid #222831;
     padding: 8px;
   }
 `;
-
 
 // 헤더 TOP: 로그인(마이페이지), 관심상품, 고객센터
 // 헤더 : 로고(home이동), SNEAKERS(상품목록), 검색창
